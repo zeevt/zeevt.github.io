@@ -18,11 +18,13 @@ There was a bug so that in the case of the previous query, it "forgot" about the
 I had code that, before performing an operation on a group of entities, did something like this:
 
 ```python
-qs_a = EntityPermission.objects
-    .filter(entity_id=OuterRef('pk'), permission_id__in=request.user.permissions_list)
+qs_a = EntityPermission.objects \
+    .filter(entity_id=OuterRef('pk'),
+            permission_id__in=request.user.permissions_list)
 count_allowed = Entity.objects \
     .annotate(allowed_by_a=Exists(qs_a), allowed_by_b=...) \
-    .filter(Q(allowed_by_a=True) | Q(allowed_by_a=True), id__in=request.input_list) \
+    .filter(Q(allowed_by_a=True) | Q(allowed_by_a=True),
+            id__in=request.input_list) \
     .count()
 if count_allowed != len(request.input_list):
     ...
