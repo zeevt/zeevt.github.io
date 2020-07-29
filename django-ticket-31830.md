@@ -1,9 +1,5 @@
 # Django ticket #31830
 
-Django is a popular web application framework in Python, similar to Ruby on Rails (same vintage).
-
-I've been working in a Django shop as a backend developer for a few years now, so I've spent a lot of time with it.
-
 Django's ORM has a feature where it detects expressions that are a priori false and optimizes accordingly.
 
 For example, there is no need to send `SELECT ... FROM ... WHERE x IN (<empty list>)` to the database to know that no rows of results will be returned. It's like `WHERE 1=0`.
@@ -19,12 +15,24 @@ Django should send to the database something like `SELECT COUNT(*) FROM ... WHER
 There was a bug so that in the case of the previous query, it "forgot" about the `OR <something else>` and just acted as if you did
 `SELECT COUNT(*) FROM ... WHERE 1=0` and returned 0, without querying the database at all.
 
-I had code that, before performing an operation on a group of entities, constructed a single query with EXISTS using the acting user's permissions for all the entities,
-and then filtered based on the EXISTS and counted how many entities there are.
+I had code that, before performing an operation on a group of entities, did something like this:
+
+```python
+qs_a = EntityPermission.objects
+    .filter(entity_id=OuterRef('pk'), permission_id__in=request.user.permissions_list)
+count_allowed = Entity.objects \
+    .annotate(allowed_by_a=Exists(qs_a), allowed_by_b=...) \
+    .filter(Q(allowed_by_a=True) | Q(allowed_by_a=True), id__in=request.input_list) \
+    .count()
+if count_allowed != len(request.input_list):
+    ...
+```
 
 If the count returned from the database is the same as the number of entities, the operation proceeds, otherwise there is an "insufficient permissions" error.
 
-The bug in Django caused a security bug in the application. It was caught in testing before the sprint was deployed,
+The bug in Django caused a bug in the application in case `request.user.permissions_list` is empty.
+The bug was hiding too much, not showing too much, but still bad.
+The bug was caught in testing before the sprint was deployed,
 and after some head scratching the issue in the application was fixed by special casing `<empty list>`
 and generating different query in that case, almost manually performing the optimization Django usually performs.
 
