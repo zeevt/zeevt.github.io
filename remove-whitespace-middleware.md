@@ -13,3 +13,5 @@ class RemoveWhitespace(MiddlewareMixin):
             response.content = _ws(b'\n', response.content)
         return response
 ```
+
+* - see https://stackoverflow.com/a/5866429/481815 for escaping liquid tags
