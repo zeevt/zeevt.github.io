@@ -9,3 +9,5 @@ A place to host blog posts.
 [Story about the time I made DDT a tiny bit less insecure](./ddt-hmac)
 
 [Use DDT with AJAX endpoints](./ddt-not-html.md)
+
+[Remove excessive whitespace in HTML from Django templates](./remove-whitespace-middleware.md)
