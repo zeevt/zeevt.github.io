@@ -1,6 +1,6 @@
 One day I got tired of excessive whitespace in html produced by rendering templates.
 
-Jinja2 has those '{%- foo -%}' thingies, but regular django templates don't. And they're annoying anyway.
+Jinja2 has those `❴％– foo –％❵` thingies, but regular django templates don't. And they're annoying anyway.
 
 So I did this:
 
