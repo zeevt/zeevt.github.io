@@ -2,7 +2,7 @@ Django Debug Toolbar doesn't work for views that return JSON - it needs an html 
 
 But we would like to use it anyway.
 
-Here is a nice hack from https://stackoverflow.com/a/19249559/481815
+Here is a nice hack from [https://stackoverflow.com/a/19249559/481815](https://stackoverflow.com/a/19249559/481815)
 
 ```python
 class NonHtmlDebugToolbarMiddleware(object):
