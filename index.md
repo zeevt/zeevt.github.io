@@ -7,3 +7,5 @@ A place to host blog posts.
 [Story about software for talking to a TPM](/tpm2-tools-sign-rsa-pss)
 
 [Story about the time I made DDT a tiny bit less insecure](./ddt-hmac)
+
+[Use DDT with AJAX endpoints](./ddt-not-html.md)
