@@ -77,6 +77,32 @@ class Ticket31830Tests(TestCase):
         self.assertEqual(count_before, count_after)
 ```
 
+This is a repro you can run in a shell of a new Django project with all default settings:
+
+```python
+from django.contrib.auth.models import User, Group
+from django.db.models import Exists, OuterRef, Q
+user1, created = User.objects.get_or_create(username='user1')
+group1, created = Group.objects.get_or_create(name='group1')
+User_groups = User._meta.fields_map['User_groups+'].related_model
+user_group, created = User_groups.objects.get_or_create(user=user1, group=group1)
+user_groups1_qs = User_groups.objects \
+    .filter(group__id__in=[group1.id], user_id=OuterRef('pk')) \
+    .values('id')
+user_groups2_qs = User_groups.objects \
+    .filter(group__id__in=[], user_id=OuterRef('pk')) \
+    .values('id')
+qs = User.objects \
+    .annotate(has_groups1=Exists(user_groups1_qs), has_groups2=Exists(user_groups2_qs)) \
+    .filter(Q(has_groups1=True) | Q(has_groups2=True))
+count_before = qs.count()
+items = list(qs)
+count_after = qs.count()
+print(count_before)
+print(len(items))
+print(count_after)
+```
+
 The response from Django maintainer @felixxm was very fast and to the point.
 They accurately recognized the issue and correctly informed me in which commit and ticket the issue was fixed.
 And also that since it's not a security bug, the fix will not be backported to Django 2.2 LTS.
