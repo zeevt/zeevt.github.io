@@ -39,7 +39,7 @@ then you asked for the second operation, but the status was still "completed", a
 either to "error" or "completed" again, and if you saw "completed" you could not know
 whether it's _still_ "completed" or _again_ "completed".
 
-I inserted superflous operations of a different sort in between every two operations of the same sort, to change the status.
+I inserted superfluous operations of a different sort in between every two operations of the same sort, to change the status.
 
 It did not improve user visible latency.
 
@@ -90,8 +90,8 @@ Another funny story is how I had to explain unicode encodings to the embedded so
 
 They were also surprised that it was possible to unpack that bitmap into fields in an SQL view for reporting.
 
-Once it turned out that they wrote softwatr that works on the manufacturing line to issue 
-unique serial numbers and bluetooth MACs to devices, and when they created a new product line 
+Once it turned out that they wrote software that works on the manufacturing line to issue
+unique serial numbers and bluetooth MACs to devices, and when they created a new product line
 they copied over the software and just started it with an offset, without a limit.
 So some time later the one with the lower offset caught up and produced devices with the same serials as other already produced devices.
 They caught it after those devices reached customers and used the website to change their serial numbers during an update.
