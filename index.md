@@ -13,3 +13,5 @@ A place to host blog posts.
 [Remove excessive whitespace in HTML from Django templates](./remove-whitespace-middleware.md)
 
 [How I learned that reading x86 assembly is not required to work at Google](./gcc450-tcmalloc.md)
+
+[BASE64 encoding overhead is how much?](./base64-overhead-how-much.md)
