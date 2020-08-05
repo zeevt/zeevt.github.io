@@ -53,7 +53,8 @@ and then you did JSONP to get the result and got BASE64 of the data, which was p
 some AJAX requests performed to the server, some UI stuff, yada yada.
 
 Anyway, they used this code from http://sourceforge.net/projects/libb64,
-you can see it [here](https://github.com/BuLogics/libb64/blob/c1e3323498e1b5512e509716c5720029853846bc/src/cencode.c) on github.
+you can see it [here](https://github.com/BuLogics/libb64/blob/c1e3323498e1b5512e509716c5720029853846bc/src/cencode.c)
+on a github mirror of the sourceforge project I found.
 
 It is a dumb C function to produce base64 encoded parts for MIME email.
 
@@ -78,3 +79,21 @@ AFAIK, they still don't do the right thing
 (see for example [mkcert](https://blog.filippo.io/mkcert-valid-https-certificates-for-localhost/)) w.r.t local TLS cert.
 
 I think the lessons on that project were in the sphere of project management, not software.
+
+A funny story from that project was the time they posted a wanted ad for "webmaster for site running on a PHP CMS"
+or something and then were super surprised that none of the people who turned up could perform operations
+on a bitmap (like, "here is an array of integers sized x bits each, write code to determine whether bit 20 is on or off, write code to turn bit 20 off", etc).
+
+I tried to explain that their wanted ad invited people who could not do that and precluded the people who could do that from answering it.
+
+Another funny story is how I had to explain unicode encodings to the embedded software team lead, because he had never worked with UTF-8 or UTF-16 and vaguely thought "Unicode" meant "UCS-2". This happened because of a bug.
+
+They were also surprised that it was possible to unpack that bitmap into fields in an SQL view for reporting.
+
+Once it turned out that they wrote softwatr that works on the manufacturing line to issue 
+unique serial numbers and bluetooth MACs to devices, and when they created a new product line 
+they copied over the software and just started it with an offset, without a limit.
+So some time later the one with the lower offset caught up and produced devices with the same serials as other already produced devices.
+They caught it after those devices reached customers and used the website to change their serial numbers during an update.
+I explained how a ticketing system should work, issuing non-overlapping batches of numbers to production lines.
+They seemed surprised by the idea.
