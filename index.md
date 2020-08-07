@@ -27,3 +27,5 @@ A place to host blog posts.
 [Determine django templates directory based on site?](./django-template-themes.md)
 
 [On accepting electronic money and a free service suddenly becoming non-free](./accepting-electronic-money.md)
+
+[On using a bad credit card processing service](./bad-cc-processor.md)
