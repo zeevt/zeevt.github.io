@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>db dump compress</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+function gen_all_data() {
+    "use strict";
+    var file_bytes = 4586763887,
+        tsv_data = "" +
+"lz4, 1, 17.604, 987935034, 4.963\n" +
+"lz4, 2, 17.201, 987935034, 6.125\n" +
+"lz4, 3, 17.309, 987935034, 5.372\n" +
+"lz4, 4, 86.869, 746755617, 4.621\n" +
+"lz4, 5, 97.999, 739214875, 5.262\n" +
+"lz4, 6, 116.717, 735001033, 4.953\n" +
+"lz4, 7, 123.283, 732588487, 4.757\n" +
+"lz4, 8, 137.617, 731146221, 4.568\n" +
+"lz4, 9, 168.259, 730474559, 4.164\n" +
+"gzip, 1, 60.75, 758716949, 29.339\n" +
+"gzip, 2, 62.993, 733349583, 26.931\n" +
+"gzip, 3, 69.103, 714011332, 27.896\n" +
+"gzip, 4, 84.076, 675766475, 27.157\n" +
+"gzip, 5, 92.848, 649295201, 27.03\n" +
+"gzip, 6, 115.266, 632258093, 26.027\n" +
+"gzip, 7, 130.341, 625787371, 25.645\n" +
+"gzip, 8, 209.511, 613043181, 25.342\n" +
+"gzip, 9, 266.522, 610579092, 25.636\n" +
+"bzip2, 1, 692.599, 549643115, 113.992\n" +
+"bzip2, 2, 762.299, 514627376, 121.513\n" +
+"bzip2, 3, 819.518, 499385242, 124.977\n" +
+"bzip2, 4, 843.231, 490093117, 127.482\n" +
+"bzip2, 5, 882.147, 483643164, 130.084\n" +
+"bzip2, 6, 946.691, 478910952, 140.3\n" +
+"bzip2, 7, 977.061, 474978661, 142.123\n" +
+"bzip2, 8, 1105.293, 472159692, 141.096\n" +
+"bzip2, 9, 1196.559, 469675536, 165.706\n" +
+"brotli, 0, 31.743, 728687223, 11.774\n" +
+"brotli, 1, 33.357, 646072494, 10.817\n" +
+"brotli, 2, 41.075, 604107130, 9.332\n" +
+"brotli, 3, 49.676, 587118496, 9.119\n" +
+"brotli, 4, 70.205, 566416356, 9.375\n" +
+"brotli, 5, 155.53, 520254545, 8.199\n" +
+"brotli, 6, 235.239, 509963023, 8.152\n" +
+"brotli, 7, 358.203, 498621904, 8.036\n" +
+"brotli, 8, 500.161, 494421704, 8.13\n" +
+"brotli, 9, 766.165, 490873702, 9.392\n" +
+"zstd, 1, 21.539, 646632564, 6.901\n" +
+"zstd, 2, 25.159, 636029088, 7.44\n" +
+"zstd, 3, 29.41, 627090049, 7.482\n" +
+"zstd, 4, 37.255, 621694593, 8.65\n" +
+"zstd, 5, 45.167, 582017238, 7.481\n" +
+"zstd, 6, 69.279, 569741791, 7.281\n" +
+"zstd, 7, 88.468, 537439006, 7.444\n" +
+"zstd, 8, 89.847, 532009292, 7.666\n" +
+"zstd, 9, 109.308, 514456720, 6.651\n" +
+"zstd, 10, 136.532, 511525974, 6.317\n" +
+"zstd, 11, 154.431, 505536283, 6.881\n" +
+"zstd, 12, 226.445, 502438913, 6.761\n" +
+"zstd, 13, 262.912, 499857677, 6.875\n" +
+"zstd, 14, 320.709, 497782701, 6.509\n" +
+"zstd, 15, 378.506, 492150926, 7.441\n" +
+"zstd, 16, 810.714, 484830772, 6.67\n" +
+"zstd, 17, 828.199, 477433626, 7.377\n" +
+"zstd, 18, 1188.006, 474950362, 7.851\n" +
+"zstd, 19, 1641.544, 464325810, 8.551\n" +
+"7z ppmd, 2, 360.932, 790075788, 268.536\n" +
+"7z ppmd, 3, 323.0, 592926794, 263.836\n" +
+"7z ppmd, 4, 354.866, 497944428, 299.73\n" +
+"7z ppmd, 5, 389.373, 453492483, 349.301\n" +
+"7z ppmd, 6, 417.766, 435083673, 375.732\n" +
+"7z ppmd, 7, 406.454, 415746497, 400.708\n" +
+"7z ppmd, 8, 437.589, 401342668, 410.06\n" +
+"7z ppmd, 9, 435.601, 397832186, 420.854\n" +
+"7z ppmd, 10, 452.823, 397694309, 436.55\n" +
+"7z ppmd, 11, 465.264, 397493293, 443.961\n" +
+"7z ppmd, 12, 473.357, 393018677, 447.292\n" +
+"7z ppmd, 13, 475.652, 393633609, 458.523\n" +
+"7z ppmd, 14, 488.213, 394742070, 463.534\n" +
+"7z ppmd, 15, 509.847, 396673557, 474.749\n" +
+"7z ppmd, 16, 526.691, 397965999, 483.974\n" +
+"7z ppmd, 17, 521.244, 398791557, 509.374\n" +
+"7z ppmd, 18, 549.175, 401144441, 498.849\n" +
+"7z ppmd, 19, 525.896, 403006729, 517.705\n" +
+"7z ppmd, 20, 535.683, 405019882, 523.784\n" +
+"xz, 1, 284.648, 506873704, 49.765\n" +
+"xz, 2, 444.586, 489453892, 48.814\n" +
+"xz, 3, 806.542, 481184072, 47.032\n" +
+"xz, 4, 986.974, 490769216, 50.72\n" +
+"xz, 5, 1711.781, 445536424, 49.398\n" +
+"xz, 6, 2548.755, 425237232, 59.215\n" +
+"xz, 7, 3205.39, 419424444, 51.046\n" +
+"xz, e, 6540.526, 398528968, 53.528\n" +
+"zpaq, 1, 280.465, 625872215, 105.994\n",
+        rows = tsv_data.split("\n"),
+        data = [],
+        row_i,
+        parts,
+        o;
+    for (row_i = 0; row_i < rows.length; row_i += 1) {
+        parts = rows[row_i].split(", ");
+        if (parts.length === 5) {
+            o = {
+                method: parts[0],
+                level: parts[1],
+                comp_seconds: parseFloat(parts[2]),
+                comp_size: parseInt(parts[3], 10),
+                decomp_seconds: parseFloat(parts[4])
+            };
+            o.comp_MBps = (file_bytes / o.comp_seconds) / (1024 * 1024);
+            o.decomp_MBps = (file_bytes / o.decomp_seconds) / (1024 * 1024);
+            o.comp_ratio = o.comp_size / file_bytes;
+            data.push(o);
+        }
+    }
+    return data;
+}
+function gen_chart_data(all_data, x_axis_attr) {
+    "use strict";
+    function cmp(a, b) {
+        if (a === b) {
+            return 0;
+        } else if (a < b) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+    function pareto_filter(an_array) {
+        var curr_i;
+        an_array.sort(function (a, b) { return cmp(a.y, b.y); });
+        for (curr_i = 1; curr_i < an_array.length; curr_i += 1) {
+            while (curr_i && curr_i < an_array.length &&
+                    an_array[curr_i].x > an_array[curr_i - 1].x) {
+                an_array.splice(curr_i - 1, 1);
+                curr_i -= 1;
+            }
+        }
+    }
+
+    var chart_data_grouped = {},
+        pareto_frontier = [],
+        curr_i,
+        o;
+
+    for (curr_i = 0; curr_i < all_data.length; curr_i += 1) {
+        o = $.extend({}, all_data[curr_i]);
+        o.x = Math.log(o[x_axis_attr]) / Math.LN10;
+        o.y = 1.0 - o.comp_ratio;
+        pareto_frontier.push(o);
+        if (!chart_data_grouped.hasOwnProperty(o.method)) {
+            chart_data_grouped[o.method] = {
+                type: 'line',
+                showInLegend: true,
+                legendText: o.method,
+                visible: true,
+                dataPoints: []
+            };
+        }
+        chart_data_grouped[o.method].dataPoints.push(o);
+    }
+
+    pareto_filter(pareto_frontier);
+    for (curr_i = 1; curr_i < pareto_frontier.length; curr_i += 1) {
+        pareto_frontier[curr_i].is_pareto_efficient = true;
+    }
+
+    chart_data_grouped.pareto = {
+        type: 'line',
+        showInLegend: true,
+        legendText: 'pareto',
+        visible: false,
+        dataPoints: pareto_frontier
+    };
+
+    return $.map(chart_data_grouped, function(val, key) {
+        pareto_filter(val.dataPoints);
+        return val;
+    });
+}
+function render_chart(id, x_axis_attr, title_word, all_data) {
+    "use strict";
+    var chart = new CanvasJS.Chart(id, {
+        title: {
+            text: "DB dump " + title_word + " speed vs. ratio",
+            dockInsidePlotArea: true,
+            fontSize: 48
+        },
+        axisX: {
+            title: title_word + " speed, CPU time on DigitalOcean 1GB, MB/s log10 (bigger is better)",
+            labelFormatter: function (e) {
+                return CanvasJS.formatNumber(Math.pow(10, e.value), '###.#');
+            },
+            interval: 0.2,
+            labelFontSize: 32,
+            titleFontSize: 32
+        },
+        axisY: {
+            minimum: 0.78,
+            maximum: 0.94,
+            title: "storage saved (bigger is better)",
+            valueFormatString: "##%",
+            gridThickness: 0,
+            labelFontSize: 32,
+            titleFontSize: 32
+        },
+        toolTip: {
+            contentFormatter: function (e) {
+                var content = "", i, o;
+                for (i = 0; i < e.entries.length; i += 1) {
+                    o = e.entries[i].dataPoint;
+                    content += o.method + " " + o.level + "<br>" +
+                        CanvasJS.formatNumber(o[x_axis_attr], '###,###.##MB/s') + "<br>" +
+                        CanvasJS.formatNumber(o.comp_ratio, '##.##%');
+                    if (o.is_pareto_efficient) {
+                        content += "<br>Pareto";
+                    }
+                }
+                return content;
+            }
+        },
+        legend: {
+            cursor: "pointer",
+            horizontalAlign: "left",
+            verticalAlign: "bottom",
+            dockInsidePlotArea: true,
+            fontSize: 16,
+            itemclick: function (e) {
+                e.dataSeries.visible = !e.dataSeries.visible;
+                e.chart.render();
+            }
+        },
+        data: gen_chart_data(all_data, x_axis_attr)
+    });
+    chart.render();
+}
+window.onload = function () {
+    "use strict";
+    var all_data = gen_all_data();
+    render_chart("chartContainer1", 'comp_MBps', "compression", all_data);
+    render_chart("chartContainer2", 'decomp_MBps', "decompression", all_data);
+};
+</script>
+</head>
+<body>
+<div id="chartContainer1" style="width: 100%; height: 1000px;"></div>
+<div id="chartContainer2" style="width: 100%; height: 1000px;"></div>
+</body>
+</html>
