@@ -20,7 +20,9 @@ Besides the backoffice, API and API docs being from the 90s,
 which is a quirk but not necessarily a problem,
 I've had three actual issues with them:
 
-1 They offer PayPal integration, meaning you don't need to
+1
+
+They offer PayPal integration, meaning you don't need to
 open a merchant account with PayPal, you open one with them,
 their payment page can send the shopper to PayPal,
 PayPal will send the money to them, they'll send the money to you.
@@ -39,7 +41,10 @@ and approve the transaction in your shop as "paid", manually.
 
 Maybe this lookup can be done with an API, but (a) I didn't see such an API and (b) come on.
 
-2 Their system sends webhooks to let the shop know that a payment actually happened for a particular transaction
+2
+
+When not using PayPal integration,
+their system sends webhooks to let the shop know that a payment actually happened for a particular transaction
 (and how much was paid, though probably some of the shops that use the service don't actually check the amount).
 
 Such webhooks need to be verified, to make sure they actually come from the payment processing company.
@@ -62,7 +67,9 @@ if you compare them.
 
 Or sooner, but only if the shop owner uses the payment processor's system to compare payments against the shop's system, manually.
 
-3 As a shopper, you could type `&paid=true` 
+3
+
+As a shopper, you could type `&paid=true` 
 (not the right key, but you get the idea)
 into any form field e.g. name or address and
 not pay (e.g. give bad credit card number) and the card processing server will send a
