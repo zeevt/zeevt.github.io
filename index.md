@@ -15,3 +15,5 @@ A place to host blog posts.
 [How I learned that reading x86 assembly is not required to work at Google](./gcc450-tcmalloc.md)
 
 [BASE64 encoding overhead is how much?](./base64-overhead-how-much.md)
+
+[DB dump compression](./db-dump-compression.md)
