@@ -25,7 +25,7 @@ I calculated the worst case is about 200 bytes per device per day of storage, wh
 In the end, the API was used to draw an UI indicator that was only interested in gaps of X hours or more,
 so gaps smaller than that were elided (neighbouring ranges merged) in the API.
 
-The storage is still with second granularity, but if the number of devices grows a lot, this will be improved.
+The storage is still with 1 second granularity, but if the number of devices grows a lot, this will be improved.
 
 After a few times when that customer asked for something very generic and then used it in a very suboptimal way,
 I became more cautious and started asking more details about intended use.
