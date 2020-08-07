@@ -21,3 +21,5 @@ A place to host blog posts.
 [Story about securing the backoffice of a sensitive site](./defend-backoffice.md)
 
 [Story about customer who wanted a cheap schema-full document store](./schemas.md)
+
+[Story about the time I almost used libsodium on an IOT project](./iot-libsodium.md)
