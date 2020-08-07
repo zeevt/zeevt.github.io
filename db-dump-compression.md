@@ -17,9 +17,10 @@ These days Yann Collet's zstd is my default general purpose compression tool for
 
 The only thing better, AFAIK, are RAD Oodle compressors, and they are (1) proprietary and (2) are not optimized for compression speed.
 
-I do recommend Charles Bloom's blog though (
-[example1](https://cbloomrants.blogspot.com/2018/06/zstd-is-faster-than-leviathan.html),
+I do recommend Charles Bloom's blog though ([example1](https://cbloomrants.blogspot.com/2018/06/zstd-is-faster-than-leviathan.html),
 [example2](https://cbloomrants.blogspot.com/2018/01/the-natural-lambda.html)).
+
+[Data Compression Explained](http://mattmahoney.net/dc/dce.html) is very good overview of data compression is by Matt Mahoney.
 
 Years later, different project.
 
