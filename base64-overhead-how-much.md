@@ -79,7 +79,7 @@ It did not improve user-visible latency.
 
 4
 
-For a new feature, my JS code issued a larger read from-flash-operation operation than before,
+For a new feature, my JS code issued a larger read-from-flash operation than before,
 and the agent promptly crashed. Reliably!
 
 Since I have been working there for a while they trusted me more 
