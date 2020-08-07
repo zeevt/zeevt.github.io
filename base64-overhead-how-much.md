@@ -31,30 +31,70 @@ I couldn't rewrite the whole thing, and it was built on shaky ground, bad php co
 For some reason they tried to compartmentalize the thing, so I was not given access to information about the device
 and I was not given the source code for the agent software with the web server interface.
 
+Working with it was an adventure. Here are some examples:
+
+1
+
+It had libcurl inside, but they handcoded the query string parsing and
+it would crash if you constructed the query string with the fields in an unexpected order.
+
+2
+
+It had a feature of "here is a URL, fetch binary data from there and write into flash at address X".
+
+It used libcurl for that. I did not test how well it did TLS cert verification (if at all)
+but the bug they actually encountered was that it did not check the http status code.
+
+So sometimes the server that produced those binary blobs that should be flashed into the device
+produced a php exception, and the html output with the php exception got written into device flash.
+
+When the firmware tried to parse the data in the flash, it was not very robust
+so it crashed and the device became bricked. It was returned, analyzed by embedded devs
+and I was asked to fix the server to not do that.
+
+One of the fixes was to make sure the php saved the blob to a file that was served by nginx,
+and if you requested a blob to be produced and then downloaded the blob multiple times,
+you always got the same blob.
+
+The JS code would do an ajax request to download the blob to verify it looks sane before asking
+the agent to download it and flash it into the device.
+
+3
+
 The interface exposed by the agent was very bad.
 
-You could not reset the status, and it was not reset automatically by "read status",
+For commands to read short values from the device, you could not reset the "last command's status",
+and it was not reset automatically by "read status",
 so for example you asked for an operation, then you performed "read status", the status was "completed",
-then you asked for the second operation, but the status was still "completed", and then it changed
+then you asked for the second operation, but the status was still "completed"
+because the operation has not been performed yet,
+and then the status changed
 either to "error" or "completed" again, and if you saw "completed" you could not know
 whether it's _still_ "completed" or _again_ "completed".
 
-I inserted superfluous operations of a different sort in between every two operations of the same sort, to change the status.
+I inserted superfluous operations of a different kind in between
+every two operations of the same kind, to force the status to change.
 
-It did not improve user visible latency.
+It did not improve user-visible latency.
 
-After a while they trusted me more and I discovered one of the reasons it crashed when
-you tried to read a larger chunk of data from the device (for a new feature) was because
-of a classic buffer overflow in a C language base64 encoder.
+4
+
+For a new feature, my JS code issued a larger read from-flash-operation operation than before,
+and the agent promptly crashed. Reliably!
+
+Since I have been working there for a while they trusted me more 
+and I got access to the source code of the agent (also the contractor that built it was no more)
+and I discovered the reason it crashed was 
+a classic buffer overflow in a base64 encoder implemented in C.
 
 Basically, you used JSONP to request a read of some length from some address,
 and then you did JSONP to poll it until it said the read was done and the result ready,
 and then you did JSONP to get the result and got BASE64 of the data, which was parsed in JS,
 some AJAX requests performed to the server, some UI stuff, yada yada.
 
-Anyway, they used this code from http://sourceforge.net/projects/libb64,
+Anyway, they used this code from [libb64](http://sourceforge.net/projects/libb64),
 you can see it [here](https://github.com/BuLogics/libb64/blob/c1e3323498e1b5512e509716c5720029853846bc/src/cencode.c)
-on a github mirror of the sourceforge project I found.
+on a github mirror of the sourceforge project I found for this blog post.
 
 It is a dumb C function to produce base64 encoded parts for MIME email.
 
@@ -63,13 +103,16 @@ It thinks there should be a line break after 72 chars.
 The C API does not pass the available space in the output buffer to the function,
 so the code cannot check whether it's overflowing the output buffer even if it wanted to.
 
+This is terrible C API design, basically unusable, would not pass code review anywhere.
+
 You see where this is going.
 
-They calculated the space required as `((input / 3) * 4)`, without taking account of the line breaks.
+They calculated the space required as `((input / 3) * 4)`, without taking the line breaks into account.
 
 For a big enough chunk, with enough line breaks, something important got overwritten and it crashed.
 
 Could it be exploited from the internet? Probably. Did it run as root? Yes.
+
 
 I am not proud of the state of that project when I left.
 
