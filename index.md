@@ -19,3 +19,5 @@ A place to host blog posts.
 [DB dump compression](./db-dump-compression.md)
 
 [Story about securing the backoffice of a sensitive site](./defend-backoffice.md)
+
+[Story about customer who wanted a cheap schema-full document store](./schemas.md)
