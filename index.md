@@ -25,3 +25,5 @@ A place to host blog posts.
 [Story about the time I almost used libsodium on an IOT project](./iot-libsodium.md)
 
 [Determine django templates directory based on site?](./django-template-themes.md)
+
+[On accepting electronic money and a free service suddenly becoming non-free](./accepting-electronic-money.md)
