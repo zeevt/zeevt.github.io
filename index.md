@@ -29,3 +29,5 @@ A place to host blog posts.
 [On accepting electronic money and a free service suddenly becoming non-free](./accepting-electronic-money.md)
 
 [On using a bad credit card processing service](./bad-cc-processor.md)
+
+[Future-proofing a generic API can be very suboptimal](./data-ranges-api.md)
