@@ -23,3 +23,5 @@ A place to host blog posts.
 [Story about customer who wanted a cheap schema-full document store](./schemas.md)
 
 [Story about the time I almost used libsodium on an IOT project](./iot-libsodium.md)
+
+[Determine django templates directory based on site?](./django-template-themes.md)
