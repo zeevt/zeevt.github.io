@@ -17,3 +17,5 @@ A place to host blog posts.
 [BASE64 encoding overhead is how much?](./base64-overhead-how-much.md)
 
 [DB dump compression](./db-dump-compression.md)
+
+[Story about securing the backoffice of a sensitive site](./defend-backoffice.md)
