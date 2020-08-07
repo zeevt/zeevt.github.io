@@ -20,3 +20,10 @@ The only thing better, AFAIK, are RAD Oodle compressors, and they are (1) propri
 I do recommend Charles Bloom's blog though (
 [example1](https://cbloomrants.blogspot.com/2018/06/zstd-is-faster-than-leviathan.html),
 [example2](https://cbloomrants.blogspot.com/2018/01/the-natural-lambda.html)).
+
+Years later, different project.
+
+- "Where can I get a db dump of dev to use on my local env?"
+- "Here is a a file on S3".
+- File takes literal 3 hours to download. File compresses to 7.6% of its size using zstd -12. (╯°□°）╯︵ ┻━┻
+
