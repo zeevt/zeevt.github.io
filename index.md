@@ -35,3 +35,5 @@ A place to host blog posts.
 [Performance optimizing receiving data over a socket in Python](./tcp-server-for-custom-protocol.md)
 
 [DNS client caching results for how long?](./DNS-TTL-how-long.md)
+
+[How to run sklearn in Lambda](./sklearn-lambda.md)
