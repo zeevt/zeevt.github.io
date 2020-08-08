@@ -31,3 +31,5 @@ A place to host blog posts.
 [On using a bad credit card processing service](./bad-cc-processor.md)
 
 [Future-proofing a generic API can be very suboptimal](./data-ranges-api.md)
+
+[Performance optimizing receiving data over a socket in Python](./tcp-server-for-custom-protocol.md)
