@@ -107,7 +107,15 @@ I thought of it as basically writing C in python.
 
 The server uses gevent, to support many concurrent clients.
 
-It was benchmarked using a test client that uses multiprocessing and gevent inside each process,
+Actually it's even better, it uses gunicorn, monkeypatching `def handle`
+and not doing HTTP or WSGI but instead doing our custom flow.
+
+Gunicorn code handles managing worker processes which is convenient.
+
+In the future, something cool that wraps Linux io_uring might be used instead,
+or a rewrite in Go might be worthwhile, but a custom gunicorn+gevent app was simple and performant.
+
+The server code was benchmarked using a test client that uses multiprocessing and gevent inside each process,
 to create a big load, and the server exceeded the performance requirements by a lot.
 
 A more naive solution probably would have been fine, but because this was a rewrite
