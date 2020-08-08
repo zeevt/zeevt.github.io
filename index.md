@@ -33,3 +33,5 @@ A place to host blog posts.
 [Future-proofing a generic API can be very suboptimal](./data-ranges-api.md)
 
 [Performance optimizing receiving data over a socket in Python](./tcp-server-for-custom-protocol.md)
+
+[DNS client caching results for how long?](./DNS-TTL-how-long.md)
