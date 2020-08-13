@@ -39,3 +39,5 @@ A place to host blog posts.
 [How to run sklearn in Lambda](./sklearn-lambda.md)
 
 [The word "hash" is oveloaded in non-useful ways](./overloaded-word-hash.md)
+
+[Java link dump](./java_link_dump.md)
