@@ -55,7 +55,7 @@ was late replying by email and we simply didn't have any more time.
 
 So I called him on the phone.
 
-Now, we have net face to face before, in the beginning of the project.
+Now, we have met face to face before, in the beginning of the project.
 
 During that phone call I realized what the problem had been for weeks.
 
