@@ -65,3 +65,5 @@ A place to host blog posts.
 [bookmarks about ECC](./bookmarks_ecc.md)
 
 [My opinion in vaccines](./vaccines.md)
+
+[Instead of gpg / pgp](./instead_of_gpg.md)
