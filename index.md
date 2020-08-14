@@ -43,3 +43,5 @@ A place to host blog posts.
 [Java link dump](./java_link_dump.md)
 
 [bookmark NIST blockchain flowchart](./bookmark_NIST_blockchain_flowchart.md)
+
+[bookmark ARM Cortex M0 and BearSSL](./bookmark_cortex_m0_bearssl.md)
