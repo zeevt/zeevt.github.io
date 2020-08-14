@@ -41,3 +41,5 @@ A place to host blog posts.
 [The word "hash" is oveloaded in non-useful ways](./overloaded-word-hash.md)
 
 [Java link dump](./java_link_dump.md)
+
+[bookmark NIST blockchain flowchart](./bookmark_NIST_blockchain_flowchart.md)
