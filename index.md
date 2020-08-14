@@ -61,3 +61,5 @@ A place to host blog posts.
 [bookmark why I don't have a high opinion of the antivirus industry](./bookmark_p0_taviso.md)
 
 [The metric system](./metric.md)
+
+[bookmarks about ECC](./bookmarks_ECC.md)
