@@ -47,3 +47,5 @@ A place to host blog posts.
 [bookmark ARM Cortex M0 and BearSSL](./bookmark_cortex_m0_bearssl.md)
 
 [bookmark ARM big.LITTLE different cache line sizes bug](./bookmark_arm_big_little_cacheline_bug.md)
+
+[bookmark Cool Kid SSH CA](./bookmark_cool_kid_ssh_ca.md)
