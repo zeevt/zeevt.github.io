@@ -37,3 +37,5 @@ https://grugq.github.io/presentations/COMSEC%20beyond%20encryption.pdf
 https://blog.cryptographyengineering.com/2014/08/13/whats-matter-with-pgp/
 
 https://moxie.org/blog/gpg-and-me/
+
+https://latacora.micro.blog/2019/07/16/the-pgp-problem.html
