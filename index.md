@@ -63,3 +63,5 @@ A place to host blog posts.
 [The metric system](./metric.md)
 
 [bookmarks about ECC](./bookmarks_ecc.md)
+
+[My opinion in vaccines](./vaccines.md)
