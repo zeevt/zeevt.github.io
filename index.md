@@ -59,3 +59,5 @@ A place to host blog posts.
 [bookmark Bujold awards necklace](./bookmark_bujold_necklace.md)
 
 [bookmark why I don't have a high opinion of the antivirus industry](./bookmark_p0_taviso.md)
+
+[The metric system](./metric.md)
