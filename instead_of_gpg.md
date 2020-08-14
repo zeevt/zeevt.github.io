@@ -28,14 +28,14 @@ Don't use gpg. Don't try to encrypt email.
 
 Links:
 
-https://blog.filippo.io/giving-up-on-long-term-pgp/
-
 https://gist.github.com/grugq/03167bed45e774551155
 
 https://grugq.github.io/presentations/COMSEC%20beyond%20encryption.pdf
 
 https://blog.cryptographyengineering.com/2014/08/13/whats-matter-with-pgp/
 
-https://moxie.org/blog/gpg-and-me/
+https://moxie.org/2015/02/24/gpg-and-me.html
+
+https://blog.filippo.io/giving-up-on-long-term-pgp/
 
 https://latacora.micro.blog/2019/07/16/the-pgp-problem.html
