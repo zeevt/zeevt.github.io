@@ -57,3 +57,5 @@ A place to host blog posts.
 [bookmark technical interview fanfic by aphyr](./bookmark_aphyr_fanfic.md)
 
 [bookmark Bujold awards necklace](./bookmark_bujold_necklace.md)
+
+[bookmark why I don't have a high opinion of the antivirus industry](./bookmark_p0_taviso.md)
