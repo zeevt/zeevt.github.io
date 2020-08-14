@@ -7,7 +7,7 @@ With the password being sent in the clear over the internet.
 
 With the backup file stored in the clear on a sketchy server.
 
-I insisted on using FTPS and ecnrypting the backup file.
+I insisted on using FTPS and encrypting the backup file.
 
 When deciding what to use for encryption we settled on gpg because
 it was reputable (turns out it was famous among non-specialists while
