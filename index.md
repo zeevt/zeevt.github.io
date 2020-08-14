@@ -49,3 +49,5 @@ A place to host blog posts.
 [bookmark ARM big.LITTLE different cache line sizes bug](./bookmark_arm_big_little_cacheline_bug.md)
 
 [bookmark Cool Kid SSH CA](./bookmark_cool_kid_ssh_ca.md)
+
+[bookmark 7nm lithography](./bookmark_7nm.md)
