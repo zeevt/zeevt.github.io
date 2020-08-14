@@ -56,3 +56,4 @@ A place to host blog posts.
 
 [bookmark technical interview fanfic by aphyr](./bookmark_aphyr_fanfic.md)
 
+[bookmark Bujold awards necklace](./bookmark_bujold_necklace.md)
