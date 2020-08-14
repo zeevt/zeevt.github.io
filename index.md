@@ -51,3 +51,5 @@ A place to host blog posts.
 [bookmark Cool Kid SSH CA](./bookmark_cool_kid_ssh_ca.md)
 
 [bookmark 7nm lithography](./bookmark_7nm.md)
+
+[bookmark pt-online-schema-change](./bookmark_pt-online-schema-change.md)
