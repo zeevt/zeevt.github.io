@@ -53,3 +53,6 @@ A place to host blog posts.
 [bookmark 7nm lithography](./bookmark_7nm.md)
 
 [bookmark pt-online-schema-change](./bookmark_pt-online-schema-change.md)
+
+[bookmark technical interview fanfic by aphyr](./bookmark_aphyr_fanfic.md)
+
