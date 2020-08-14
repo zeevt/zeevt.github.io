@@ -13,8 +13,8 @@ When deciding what to use for encryption we settled on gpg because
 it was reputable (turns out it was famous among non-specialists while
 actual infosec professionals thought it was shit).
 
-I used some command line argument to force it to use good algorithms,
-since the defaults were shit (less secure and slower than what I wanted).
+I used some command line arguments to force it to use better algorithms,
+since the defaults were shit (less secure and slower than what I chose).
 
 We used it for a while until I've had enough and we switched to AWS S3.
 
