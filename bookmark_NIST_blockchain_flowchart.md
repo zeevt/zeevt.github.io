@@ -4,4 +4,4 @@ Some entries here are just bookmarks.
 
 [PDF](https://nvlpubs.nist.gov/nistpubs/ir/2018/NIST.IR.8202.pdf)
 
-[flowchart](./NIST blockchain flowchart.png)
+[flowchart](./NIST_blockchain_flowchart.png)
