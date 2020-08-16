@@ -67,3 +67,6 @@ A place to host blog posts.
 [My opinion in vaccines](./vaccines.md)
 
 [Instead of gpg / pgp](./instead_of_gpg.md)
+
+[bookmarks bits of security](./bookmark_bits_of_security.md)
+
