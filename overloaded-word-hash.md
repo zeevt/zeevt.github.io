@@ -4,9 +4,11 @@ Naming things is famously one of the hard things in computer science, but still.
 
 This time I'm complaining about the word "hash" or "hash function".
 
-First, a function you would use to protect against accidental data change is not a hash function at all. See CRC or Luhn algorithm.
+First, a function you would use to protect against accidental data change
+is not a hash function at all. See [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check)
+or [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm).
 
-The properties you want in a function used has tables are speed and
+The properties you want in a function used in hash tables are speed and
 distributing inputs into buckets mostly evenly.
 
 [xxHash](https://cyan4973.github.io/xxHash/) is the new hotness.
@@ -15,7 +17,8 @@ I once wrote code to pick the most "selective" bits from a set of 32bit ints,
 to create a fast frozen hash table of those ints. Beat more popular hash functions for my use case.
 
 If you're defending the hash table from algorithmic complexity attacks, you need
-something more like (but not exactly) a cryptographic hash function (SipHash is popular for this use case).
+something more like (but not exactly) a cryptographic hash function
+([SipHash](https://en.wikipedia.org/wiki/SipHash) is popular for this use case).
 
 A function you would use for data deduplication needs to be cryptographic if your storage relies on no collisions.
 If you handle collisions, a function for hash tables would do, since you're storing a hash table.
