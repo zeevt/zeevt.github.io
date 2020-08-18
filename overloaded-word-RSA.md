@@ -30,8 +30,8 @@ trapdoor permutation / cryptosystem, now has little
 to do with the inventors or cryptography.
 Infamously used to sell a cryptographic software library
 called BSAFE which used the NSA's backdoored RNG called
-DUAL_EC_DRBG and took $10M from the NSA to make that
-the default RNG.
+[DUAL_EC_DRBG](https://en.wikipedia.org/wiki/Dual_EC_DRBG)
+and took $10M from the NSA to make that the default RNG.
 
 The [RSA Conference](https://en.wikipedia.org/wiki/RSA_Conference),
 a mostly non-technical
