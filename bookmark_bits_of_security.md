@@ -20,11 +20,12 @@ The number of bits being large makes calculations slow and
 the attacks keep improving so people are worried and move to ECC.
 
 Hash functions, the size of the private keys in FFDHE, ECC curve size
-(close enough to ECC private key, public key, ECIEC ciphertext,
+(close enough to ECC private key, public key, ECIES ciphertext,
 ECDH key shares):
 half their length in bits is their "bits of security" because of
 [Pollard's Rho](https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm)
 and [baby-step, giant-step](https://en.wikipedia.org/wiki/Baby-step_giant-step).
 
-ECDSA and EdDSA signatures are twice the length of the private key,
-so four times the "bits of security".
+ECDSA and EdDSA signatures are twice the length of the private key
+(plus ASN.1 overhead), so four times the "bits of security",
+so ~70 byte signatures for 128 bit security.
