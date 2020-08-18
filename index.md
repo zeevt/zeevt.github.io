@@ -81,3 +81,5 @@ A place to host blog posts.
 [bookmarks bits of security](./bookmark_bits_of_security.md)
 
 [bookmark don't call signatures "encryption"](./bookmark_digital_signatures_are_not_encryption.md)
+
+[bookmark James Mickens](./bookmark_james_mickens.md)
