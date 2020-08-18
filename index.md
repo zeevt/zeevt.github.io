@@ -2,6 +2,8 @@
 
 A place to host blog posts.
 
+## "war" stories
+
 [Story of django ticket #31830](/django-ticket-31830)
 
 [Story about software for talking to a TPM](/tpm2-tools-sign-rsa-pss)
@@ -38,7 +40,21 @@ A place to host blog posts.
 
 [How to run sklearn in Lambda](./sklearn-lambda.md)
 
+## opinions
+
+[The metric system](./metric.md)
+
+[My opinion in vaccines](./vaccines.md)
+
+[Instead of gpg / pgp](./instead_of_gpg.md)
+
+## overloaded words
+
 [The word "hash" is oveloaded in non-useful ways](./overloaded-word-hash.md)
+
+[overloaded word "RSA"](./overloaded-word-RSA.md)
+
+## bookmarks
 
 [Java link dump](./java_link_dump.md)
 
@@ -60,13 +76,7 @@ A place to host blog posts.
 
 [bookmark why I don't have a high opinion of the antivirus industry](./bookmark_p0_taviso.md)
 
-[The metric system](./metric.md)
-
 [bookmarks about ECC](./bookmarks_ecc.md)
-
-[My opinion in vaccines](./vaccines.md)
-
-[Instead of gpg / pgp](./instead_of_gpg.md)
 
 [bookmarks bits of security](./bookmark_bits_of_security.md)
 
