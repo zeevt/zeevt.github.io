@@ -8,8 +8,8 @@ First, a function you would use to protect against accidental data change
 is not a hash function at all. See [CRC](https://en.wikipedia.org/wiki/Cyclic_redundancy_check)
 or [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm).
 
-The properties you want in a function used in hash tables are speed and
-distributing inputs into buckets mostly evenly.
+The properties you want in a function used in [hash tables](https://en.wikipedia.org/wiki/Hash_table)
+are speed and distributing inputs into buckets mostly evenly.
 
 [xxHash](https://cyan4973.github.io/xxHash/) is the new hotness.
 
@@ -25,17 +25,22 @@ If you handle collisions, a function for hash tables would do, since you're stor
 
 If you're hashing data to anonymize it, you're probably doing it wrong and talk to a cryptographer.
 
-A hash function used inside HMAC to create a MAC is not the same as the hash function you use
-in digital signatures that protect certificates and authenticated DH key exchanges.
+A hash function used inside HMAC to create a MAC
+(requiring [preimage resistance](https://en.wikipedia.org/wiki/Preimage_attack))
+is not the same as the hash function you use
+in digital signatures that protect certificates and authenticated DH key exchanges
+(see [collision attack](https://en.wikipedia.org/wiki/Collision_attack)).
 
-Blake3 seems to be the new hotness. Blake2 was good too. SHA3 is slow, KangarooTwelve is not standardized.
+[Blake3](https://github.com/BLAKE3-team/BLAKE3) seems to be the new hotness.
+[Blake2](https://blake2.net/) was good too.
+SHA3 is slow, [KangarooTwelve](https://keccak.team/kangarootwelve.html) is not standardized.
 Truncated SHA2-512 to 256 is both faster and more secure than SHA-256,
 because 64 bits operations and defense against length extension attack.
 
 SHA-2 is [likely not going to be broken any time soon](https://twitter.com/veorq/status/834872988445065218).
 
 SHA1 and even MD5 are secure in HMAC, but don't use them anyway because they're a code smell.
-But TLS did not need to create CBC-SHA2 cipher suites after all.
+But [TLS did not need to create CBC-SHA2 cipher suites](https://security.stackexchange.com/a/85941/70830) after all.
 
 Lastly, password storage systems can be built out of hash functions, like PBKDF2, but
 they have completely different requirements from hash functions.
