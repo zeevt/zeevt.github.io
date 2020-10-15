@@ -12,5 +12,9 @@ technical interview fanfiction in the style of high fantasy.
 
 [typing the technical interview](https://aphyr.com/posts/342-typing-the-technical-interview)
 
+[rewriting the technical interview](https://aphyr.com/posts/353-rewriting-the-technical-interview)
+
+[unifying the technical interview](https://aphyr.com/posts/354-unifying-the-technical-interview)
+
 [A comment](https://www.metafilter.com/166166/Og-to-til-javanissen#6985515)
 from the author about the inspirations for the writing style.
