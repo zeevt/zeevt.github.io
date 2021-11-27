@@ -35,13 +35,13 @@ The python code was something like this:
 ```python
 tenant_num_processes_qs = Item.objects \
   .filter(owner__profile__tenant_id=OuterRef('owner__profile__tenant_id'),
-          state__in=(Item.WAITING, Item.IN_PROGRESS),
-          stage__in=Item.SOME_STAGES) \
+          state__in=(Item.WAITING, Item.IN_PROGRESS)) \
   .values('owner__profile__tenant_id') \
   .annotate(tenant_num_processes=Count('id')) \
   .values('tenant_num_processes')
-qs = Item.objects.filter(state=Item.WAITING, stage=Item.PROCESS1)
-qs = qs.annotate(tenant_used=Coalesce(Subquery(tenant_num_processes_qs, output_field=IntegerField()), Value(0)))
+qs = Item.objects.filter(state=Item.WAITING)
+qs = qs.annotate(tenant_used=Coalesce(Subquery(
+  tenant_num_processes_qs, output_field=IntegerField()), Value(0)))
 tenant_allowed = 10
 update_qs = qs.filter(id=item_id, tenant_used__lt=tenant_allowed)
 rows_updated = update_qs.update(state=Item.IN_PROGRESS)
@@ -59,7 +59,6 @@ WHERE item.id IN (
   JOIN profile a2
   WHERE 
     a0.id = X
-    AND a0.stage = 'process1'
     AND a0.state = 'waiting'
     AND COALESCE(
       (
@@ -68,8 +67,7 @@ WHERE item.id IN (
          JOIN user b1
          JOIN profile b2
          WHERE
-           b0.stage IN ('process1', 'process2', 'process3')
-           AND b0.state IN ('waiting', 'in_progress')
+           b0.state IN ('waiting', 'in_progress')
            AND b2.tenant_id = a2.tenant_id
          GROUP BY b2.tenant_id
       )
@@ -91,7 +89,6 @@ UPDATE item
 SET state = 'in_progress'
 WHERE
   item.id = X
-  AND item.stage = 'process1'
   AND item.state = 'waiting'
   AND COALESCE(
     (
@@ -104,8 +101,7 @@ WHERE
        JOIN user b5
        FROM item b6
        WHERE
-         b0.stage IN ('process1', 'process2', 'process3')
-         AND b0.state IN ('waiting', 'in_progress')
+         b0.state IN ('waiting', 'in_progress')
          AND b6.id = item.id
        GROUP BY b2.tenant_id
     )
