@@ -32,7 +32,7 @@ so I didn't dive into the docs.
 
 The python code was something like this:
 
-```
+```python
 tenant_num_processes_qs = Item.objects \
   .filter(owner__profile__tenant_id=OuterRef('owner__profile__tenant_id'),
           state__in=(Item.WAITING, Item.IN_PROGRESS),
@@ -49,7 +49,7 @@ rows_updated = update_qs.update(state=Item.IN_PROGRESS)
 
 and the SQL was something like this:
 
-```
+```sql
 UPDATE item
 SET state = 'in_progress'
 WHERE item.id IN (
@@ -79,14 +79,14 @@ WHERE item.id IN (
 
 And the fix was to do this instead:
 
-```
+```python
 tenant_num_processes_qs = Item.objects \
   .filter(owner__profile__tenant__profile__user__item=OuterRef('id'),
 ```
 
 so that the SQL would be like so:
 
-```
+```sql
 UPDATE item
 SET state = 'in_progress'
 WHERE
