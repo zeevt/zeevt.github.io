@@ -58,6 +58,8 @@ A place to host blog posts.
 
 ## bookmarks
 
+[Use boring technology](./bookmark_boring_technology.md)
+
 [Java link dump](./java_link_dump.md)
 
 [bookmark NIST blockchain flowchart](./bookmark_NIST_blockchain_flowchart.md)
