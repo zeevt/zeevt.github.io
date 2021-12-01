@@ -4,6 +4,8 @@ A place to host blog posts.
 
 ## "war" stories
 
+[Streaming JSON encoding and decoding](./json-streaming.md)
+
 [Story about semantic of subqueries in PostgreSQL UPDATE and Django ORM](/django_sql_update)
 
 [Story of django ticket #31830](/django-ticket-31830)
