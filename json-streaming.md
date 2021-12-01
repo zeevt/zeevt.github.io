@@ -99,7 +99,7 @@ When doing `read_data()`, the input should be stream reader `r` and a factory th
 The code can read chunks from r, decode keys, create stream writers for each value using the factory,
 read and json-unescape the string values in chunks, write the unescaped chunks into the stream writers,
 then flush the close the stream writers and put the `bytes` returned by `BytesIO.getvalue()` into the result `dict`.
-I dind't find a nice abstraction for this so I made a less nice one,
+I didn't find a nice abstraction for this so I made a less nice one,
 and it does support using real files instead of comrepessed buffers in memory.
 
 In a cursory search, I didn't find a nice SAX or StAX JSON library for python, so I solved my problem
