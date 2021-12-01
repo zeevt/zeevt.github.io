@@ -89,12 +89,14 @@ the space for the compressed buffers and maybe 1MB for overhead.
 
 But the JSON library in python's standard library uses a lot of memory, because of the DOM API.
 
-A nice JSON library doing `write_data` could have accepted an output stream writer `w` 
-and a dict that has [stream readers](https://python-zstandard.readthedocs.io/en/latest/decompressor.html#zstandard.ZstdDecompressor.stream_reader) for values,
-and decompressed the input in little chunks, json-escaped the string chunks and compressed them into the output.
+A nice JSON library doing `write_data` could have accepted an output 
+[stream writer](https://python-zstandard.readthedocs.io/en/latest/compressor.html#zstandard.ZstdCompressor.stream_writer)
+`w` and a dict that has
+[stream readers](https://python-zstandard.readthedocs.io/en/latest/decompressor.html#zstandard.ZstdDecompressor.stream_reader)
+for values, and decompressed the input in little chunks, json-escaped the string chunks and compressed them into the output.
 
-When doing `read_data()`, the input should be stream reader `r` and a factory that creates stream writers backed by io.BytesIO.
-The code can read chunks from r, decode keys, creates stream writers for each value using the factory,
+When doing `read_data()`, the input should be stream reader `r` and a factory that creates stream writers backed by `io.BytesIO`.
+The code can read chunks from r, decode keys, create stream writers for each value using the factory,
 read and json-unescape the string values in chunks, write the unescaped chunks into the stream writers,
 then flush the close the stream writers and put the `bytes` returned by `BytesIO.getvalue()` into the result `dict`.
 I dind't find a nice abstraction for this so I made a less nice one,
