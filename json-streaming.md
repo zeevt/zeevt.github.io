@@ -84,8 +84,8 @@ This generates a ~50MB file containing ~500MB of junk, but it uses about 3GB of 
 to save the file and about the same to load it.
 
 It is clear that it is possible to generate the file using less than 1MB of RAM and
-loading the file into a compressed buffer in memory should only require
-the space for the compressed buffer and maybe 1MB for overhead.
+loading the file into compressed buffers in memory should only require
+the space for the compressed buffers and maybe 1MB for overhead.
 
 But the JSON library in python's standard library uses a lot of memory, because of the DOM API.
 
