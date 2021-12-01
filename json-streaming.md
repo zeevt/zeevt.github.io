@@ -20,7 +20,7 @@ we didn't "just" fix it.
 Anyway, as I wrote, after optimizing the easy parts I had something like this to create the file:
 
 ```python
-import base64, json, io, os
+import base64, io, json, os
 import zstandard
 
 def gen_v(size_mb):
@@ -60,7 +60,7 @@ write_data(gen_data())
 And something like this to load it:
 
 ```python
-import base64, json, io, os
+import io, json
 import zstandard
 
 def read_data():
