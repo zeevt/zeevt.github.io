@@ -58,6 +58,10 @@ A place to host blog posts.
 
 [overloaded word "RSA"](./overloaded-word-RSA.md)
 
+## notes
+
+[python default encoding](./note_python_default_encoding.md)
+
 ## bookmarks
 
 [Use boring technology](./bookmark_boring_technology.md)
